@@ -5,9 +5,38 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <title>Form Validator</title>
 </head>
 <body>
 
+<div class="container">
+    <form id="form" class="form">
+        <h2>Register With Us</h2>
+        <div class="form-control">
+            <label for="username">Username</label>
+            <input id="username" type="text" placeholder="Enter Username">
+            <small>Error Message</small>
+        </div>
+        <div class="form-control">
+            <label for="email">Email</label>
+            <input id="email" type="text" placeholder="Enter Email">
+            <small>Error Message</small>
+        </div>
+        <div class="form-control">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Enter Password">
+            <small>Error Message</small>
+        </div>
+        <div class="form-control">
+            <label for="password2">Confirm Password</label>
+            <input id="password2" type="text" placeholder="Enter password again">
+            <small>Error Message</small>
+        </div>
+        <button>Register</button>
+    </form>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
