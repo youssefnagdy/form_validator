@@ -4,7 +4,7 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
-// Check Required Inputs
+// Check Required Fields
 function CheckRequired(inputArr)
 {
     inputArr.forEach(function (input) {
@@ -15,6 +15,18 @@ function CheckRequired(inputArr)
         ShowSuccess(input);
     }
     })
+}
+//Check Length
+function CheckLength(input,min,max)
+{
+    if(input.value.length < min )
+    {
+        ShowError(input,`${getFieldName(input)} Must be at Least ${min} Characters`)
+    }else if (input.value.length > max){
+        ShowError(input,`${getFieldName(input)} Must be less than  ${max} Characters`)
+    }else{
+        ShowSuccess(input)
+    }
 }
 //Get Input Name By ID
 function getFieldName(input) {
@@ -41,4 +53,6 @@ function IsValidEmail(email) {
 form.addEventListener('submit',function (e) {
     e.preventDefault();
     CheckRequired([username,email,password,password2]);
+    CheckLength(username,3,15);
+    CheckLength(password,6,25);
 });
